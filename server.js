@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3000; //oooh Fancy!! a variable for the port!
 
 app.use(express.static("public"));
 
