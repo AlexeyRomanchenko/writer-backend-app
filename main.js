@@ -4,9 +4,7 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-app.configure(() => {
-  app.set("port", process.env.PORT || 3000);
-});
+app.set("port", process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
   res.render("index.html");
@@ -29,7 +27,5 @@ app.get("/about", (req, res) => {
 });
 console.log(app.get("port"));
 app.listen(app.get("port"), () => {
-  console.log(
-    `Example app listening at http://localhost:${server.address().port}`
-  );
+  console.log(`Example app listening at http://localhost:${app.get("port")}`);
 });
