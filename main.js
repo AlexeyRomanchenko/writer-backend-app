@@ -15,14 +15,15 @@ app.get('/works', (req, res) => {
   const works = [
     {
       id: 1,
-      title: 'Beware of Cat',
-      img: '/static/media/beware.f11e2a3c.png',
+      title: "Nightwatchers", 
+      img: '/static/media/nightwatchers.e2144658.png',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.'
     },
     {
-      title: "Nightwatchers", 
+      
       id: 2, 
-      img: '/static/media/nightwatchers.e2144658.png',
+      title: 'Beware of Cat',
+      img: '/static/media/beware.f11e2a3c.png',      
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.", 
     },
     {
@@ -55,8 +56,11 @@ res.json(stores);
 
 app.get("/card/info", (req, res) => {
   let info = {
-    header: "Vincent Wickoff",
-    content: `Vince Wyckoff has been writing since the age of fifteen, when he
+    header: "Vincent Wyckoff",
+    content: `Vincent has been writing since the age of fifteen, when he
+      first read William Faulkner. He knew then and there he would be a
+      writer. When he's not writing novels, he's either building things
+      in his workshop or painting. Vince Wyckoff has been writing since the age of fifteen, when he
       first read William Faulkner. He knew then and there he would be a
       writer. When he's not writing novels, he's either building things
       in his workshop or painting`,
