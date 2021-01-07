@@ -11,6 +11,9 @@ app.set("port", process.env.PORT || 3001);
 app.get("/", (req, res) => {
   res.render("index.html");
 });
+
+//1. Works 
+
 app.get('/works', (req, res) => {
   const works = [
     {
@@ -36,6 +39,8 @@ app.get('/works', (req, res) => {
   res.json(works);
 });
 
+//2. Works by ID - 
+
 app.get('/shops/work/:id', (req, res)=> {
   console.log(req.params.id);
   const stores = [ 
@@ -54,12 +59,16 @@ app.get('/shops/work/:id', (req, res)=> {
 res.json(stores); 
 });
 
+
+//3. Bio Information for home page
+
 app.get("/card/info", (req, res) => {
   let info = {
     header: "Vincent Wyckoff",
     content: `Vincent has been writing since the age of fifteen, when he
       first read William Faulkner. He knew then and there he would be a
-      writer. When he's not writing novels, he's either building things
+      writer. He wrote every day during his lunch hour at a local coffee shop while working as a mail carrier, 
+      and published his frist book of short stories in 200x. When he's not writing novels, he's either building things
       in his workshop or painting. Vince Wyckoff has been writing since the age of fifteen, when he
       first read William Faulkner. He knew then and there he would be a
       writer. When he's not writing novels, he's either building things
@@ -69,6 +78,30 @@ app.get("/card/info", (req, res) => {
   };
   res.json(info);
 });
+
+//4. Excerpt Data
+
+
+
+
+
+//5. Events Data
+app.get("/events", (req, res) => {
+  let events = [{
+    id: 1,
+    key: 1, 
+    img: '/static/media/beware.f11e2a3c.png',
+    title: "Reading at Barnes & Noble",
+    date: "January 31, 2021",
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
+    anchor:"/events" 
+  }];
+  res.json(events);
+});
+
+
+
+
 app.listen(app.get("port"), () => {
   console.log(`Example app listening at http://localhost:${app.get("port")}`);
 });
