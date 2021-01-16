@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const serverless = require("serverless-http");
 const app = express();
 const port = 3001;
 
 app.use(express.static("public"));
 app.use(cors());
 
-app.set("port", process.env.PORT || 3001);
+app.set("port", process.env.PORT || 3001); //comment out when upload into Lambda
 
 app.get("/", (req, res) => {
   res.render("index.html");
@@ -100,8 +101,9 @@ app.get("/events", (req, res) => {
 });
 
 
+/* module.exports.handler = serverless(app); */
 
 
 app.listen(app.get("port"), () => {
   console.log(`Example app listening at http://localhost:${app.get("port")}`);
-});
+}); 
