@@ -13,6 +13,19 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
+
+//Menu Labels
+/*
+export const MenuData = [
+  { id: 1, label: "Home", anchor: "/" },
+  { id: 2, label: "Works", anchor: "/works" },
+  { id: 3, label: "Buy", anchor: "/buy" },
+  { id: 5, label: "Events", anchor: "/events" },
+  { id: 6, label: "Contact", anchor: "/contact" },
+];
+*/
+
+
 //1. Works 
 
 app.get('/works', (req, res) => {
@@ -21,21 +34,22 @@ app.get('/works', (req, res) => {
       id: 1,
       title: "Nightwatchers", 
       img: '/static/media/nightwatchers.e2144658.png',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.'
-    },
-    {
-      
-      id: 2, 
-      title: 'Beware of Cat',
-      img: '/static/media/beware.f11e2a3c.png',      
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.", 
+      content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
     },
     {
       title: "Black Otter Bay", 
-      id: 3, 
+      id: 2, 
       img: '/static/media/blackotterbay.12ef28be.png',
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.", 
+      content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.", 
+    },
+    {
+      
+      id: 3, 
+      title: 'Beware of Cat',
+      img: '/static/media/beware.f11e2a3c.png',      
+      content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
     }
+   
   ];
   res.json(works);
 });
@@ -66,35 +80,24 @@ res.json(stores);
 app.get("/card/info", (req, res) => {
   let info = {
     header: "Vincent Wyckoff",
-    content: `Vincent has been writing since the age of fifteen, when he
-      first read William Faulkner. He knew then and there he would be a
-      writer. He wrote every day during his lunch hour at a local coffee shop while working as a mail carrier, 
-      and published his frist book of short stories in 200x. When he's not writing novels, he's either building things
-      in his workshop or painting. Vince Wyckoff has been writing since the age of fifteen, when he
-      first read William Faulkner. He knew then and there he would be a
-      writer. When he's not writing novels, he's either building things
-      in his workshop or painting`,
+    /*img:*/
+    content: `Born and raised in Columbia Heights, Minnesota, Vince dedicated a career to the U.S. Postal Service. His first book, Beware of Cat, and Other Encounters of a Letter Carrier, celebrates the stories of people on his route. Prior to that, he served a tour of duty in the U.S. Army, and attended the University of Minnesota. For a short time he lived on the Northshore of Lake Superior, from which he developed the background for Black Otter Bay, his first work of fiction, and a finalist for the 2016 Midwest Book Award. His stories have been published in several local periodicals, as well as the anthology, Home. Recently nominated for two awards, Nightwatchers is the sequel to Black Otter Bay. Vince and his wife, Sybil, are longtime residents of south Minneapolis. They have three children and six grandchildren.
+  `,
     quotes:
       "“The world needs more wise and gentle voices like Vince Wyckoff’s.” - Lorna Landvik",
   };
   res.json(info);
 });
 
-//4. Excerpt Data
-
-
-
-
-
-//5. Events Data
+//4. Events Data
 app.get("/events", (req, res) => {
   let events = [{
     id: 1,
     key: 1, 
     img: '/static/media/beware.f11e2a3c.png',
-    title: "Reading at Barnes & Noble",
-    date: "January 31, 2021",
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing. Senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
+    title: "Coming Soon",
+    date: "",
+    content: 'Check back soon for upcoming reading events!',
     anchor:"/events" 
   }];
   res.json(events);
