@@ -37,8 +37,8 @@ app.get('/works', (req, res) => {
       content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
     },
     {
-      title: "Black Otter Bay", 
       id: 2, 
+      title: "Black Otter Bay",
       img: '/static/media/blackotterbay.12ef28be.png',
       content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.", 
     },
