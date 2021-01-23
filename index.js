@@ -14,17 +14,6 @@ app.get("/", (req, res) => {
 });
 
 
-//Menu Labels
-/*
-export const MenuData = [
-  { id: 1, label: "Home", anchor: "/" },
-  { id: 2, label: "Works", anchor: "/works" },
-  { id: 3, label: "Buy", anchor: "/buy" },
-  { id: 5, label: "Events", anchor: "/events" },
-  { id: 6, label: "Contact", anchor: "/contact" },
-];
-*/
-
 
 //1. Works 
 
@@ -51,7 +40,10 @@ app.get('/works', (req, res) => {
     }
    
   ];
-  res.json(works);
+  setTimeout(() => {
+    res.json(works);
+  }, 5000);
+
 });
 
 //2. Works by ID - 
@@ -86,7 +78,9 @@ app.get("/card/info", (req, res) => {
     quotes:
       "“The world needs more wise and gentle voices like Vince Wyckoff’s.” - Lorna Landvik",
   };
-  res.json(info);
+  setTimeout(() => {
+    res.json(info);
+  }, 5000);
 });
 
 //4. Events Data
