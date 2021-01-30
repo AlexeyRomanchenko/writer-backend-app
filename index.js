@@ -42,7 +42,7 @@ app.get('/works', (req, res) => {
   ];
   setTimeout(() => {
     res.json(works);
-  }, 5000);
+  }, 1000);
 
 });
 
@@ -80,7 +80,7 @@ app.get("/card/info", (req, res) => {
   };
   setTimeout(() => {
     res.json(info);
-  }, 5000);
+  }, 1000);
 });
 
 //4. Events Data
@@ -94,8 +94,46 @@ app.get("/events", (req, res) => {
     content: 'Check back soon for upcoming reading events!',
     anchor:"/events" 
   }];
-  res.json(events);
-});
+  setTimeout(() => {
+    res.json(events);
+  },1000);
+  })
+
+  //5. Store Data
+
+  app.get("/buy",(req,res) => {
+
+      let storeData = [
+        { 
+          id: 1, 
+          shop_name: 'Once Upon a Crime', 
+          shop_logo:'https://onceuponacrimebooks.indielite.org/sites/onceuponacrimebooks.indielite.org/files/logo_address_1.jpg', 
+          shop_link:'https://onceuponacrimebooks.indielite.org/search/author/%22Wyckoff%2C%20Vincent%22'
+        },
+      
+        { 
+          id: 2, 
+          shop_name: 'Amazon', 
+          shop_logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png', 
+          shop_link:'https://www.amazon.com/Vincent-Wyckoff/e/B001JS9M7O/ref=dp_byline_cont_pop_ebooks_1'
+        },
+      
+         {
+      
+          id: 3, 
+          shop_name: 'Barnes and Noble', 
+          shop_logo:'https://happycards.com/wp-content/uploads/2020/09/barnes-noble-logo.png', 
+          shop_link:'https://www.barnesandnoble.com/s/%22Vincent%20Wyckoff%22'
+        }
+          
+      ]
+      setTimeout(() => {
+        res.json(storeData);
+      },1000);
+
+    })
+
+
 
 
 /* module.exports.handler = serverless(app); */
