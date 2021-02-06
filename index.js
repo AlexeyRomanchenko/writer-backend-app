@@ -120,7 +120,10 @@ app.get('/shops/work/:id', (req, res)=> {
 
   ];
 
-res.json(workStores);
+  const store = workStores.filter(store => store.id == req.params.id);
+  console.log("OUR SELECTED  STORE SHOULD BE ", store);
+
+res.json(store);
 });
 
 
