@@ -19,22 +19,22 @@ And to launch it you have to type "node server.js". this command will execute se
 }
 
 #CORS policy
-        [
-{
-"AllowedHeaders": [
-"*"
-],
-"AllowedMethods": [
-"PUT",
-"GET",
-"POST",
-"DELETE"
-],
-"AllowedOrigins": [
-"*"
-],
-"ExposeHeaders": []
-}
+[
+    {
+      "AllowedHeaders": [
+            "*"
+            ],
+      "AllowedMethods": [
+            "PUT",
+            "GET",
+            "POST",
+            "DELETE"
+            ],
+      "AllowedOrigins": [
+            "*"
+            ],
+      "ExposeHeaders": []
+            }
 ]
 
 #more properties
