@@ -39,9 +39,9 @@ app.get('/works', (req, res) => {
     }
 
   ];
-  setTimeout(() => {
+
     res.json(works);
-  }, 1000);
+  
 
 });
 
@@ -132,15 +132,15 @@ res.json(store);
 app.get("/card/info", (req, res) => {
   let info = {
     header: "Vincent Wyckoff",
-    img:`https://${req.headers.host}/img/bio.png`,
+    img:`http://${req.headers.host}/img/bio.png`,
     content: `Born and raised in Columbia Heights, Minnesota, Vince dedicated a career to the U.S. Postal Service. His first book, Beware of Cat, and Other Encounters of a Letter Carrier, celebrates the stories of people on his route. Prior to that, he served a tour of duty in the U.S. Army, and attended the University of Minnesota. For a short time he lived on the Northshore of Lake Superior, from which he developed the background for Black Otter Bay, his first work of fiction, and a finalist for the 2016 Midwest Book Award. His stories have been published in several local periodicals, as well as the anthology, Home. Recently nominated for two awards, Nightwatchers is the sequel to Black Otter Bay. Vince and his wife, Sybil, are longtime residents of south Minneapolis. They have three children and six grandchildren.
   `,
     quotes:
       "“The world needs more wise and gentle voices like Vince Wyckoff’s.” - Lorna Landvik",
   };
-  setTimeout(() => {
+ 
     res.json(info);
-  }, 1000);
+ 
 });
 
 //4. Events Data
@@ -148,15 +148,15 @@ app.get("/events", (req, res) => {
   let events = [{
     id: 1,
     key: 1,
-    img: '/static/media/beware.f11e2a3c.png',
+    img: `http://${req.headers.host}/img/vince_reading.png`,
     title: "Coming Soon",
     date: "",
     content: 'Check back soon for upcoming reading events!',
     anchor:"/events"
   }];
-  setTimeout(() => {
+  
     res.json(events);
-  },1000);
+ 
   })
 
   //5. Store Data
@@ -187,9 +187,9 @@ app.get("/events", (req, res) => {
         }
 
       ]
-      setTimeout(() => {
+     
         res.json(storeData);
-      },1000);
+    
 
     })
 
