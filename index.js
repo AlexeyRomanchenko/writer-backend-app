@@ -22,20 +22,20 @@ app.get('/works', (req, res) => {
     {
       id: 1,
       title: "Nightwatchers",
-      img: `https://${req.headers.host}/img/nightwatchers.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/nightwatchers.png`,
       content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
     },
     {
       id: 2,
       title: "Black Otter Bay",
-      img: `https://${req.headers.host}/img/blackotterbay.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/blackotterbay.png`,
       content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.",
     },
     {
 
       id: 3,
       title: 'Beware of Cat',
-      img: `https://${req.headers.host}/img/beware.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
       content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
     }
 
@@ -48,8 +48,6 @@ app.get('/works', (req, res) => {
 
 //2. Works by ID -
 
-//This isn't working - we should be receiving the id, which then invokes storeInfo associated with that id
-
 
 app.get('/shops/work/:id', (req, res)=> {
   console.log(req.params.id);
@@ -58,7 +56,7 @@ app.get('/shops/work/:id', (req, res)=> {
       label: "Buy",
       id: 1,
       title: "Nightwatchers",
-      img: `https://${req.headers.host}/img/nightwatchers.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/nightwatchers.png`,
       content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
 
       storeInfo:[
@@ -80,7 +78,7 @@ app.get('/shops/work/:id', (req, res)=> {
       label: "Buy",
       id: 2,
       title: "Black Otter Bay",
-      img: `https://${req.headers.host}/img/blackotterbay.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/blackotterbay.png`,
       content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.",
 
        storeInfo:[
@@ -101,7 +99,7 @@ app.get('/shops/work/:id', (req, res)=> {
       label: "Buy",
       id: 3,
       title: 'Beware of Cat',
-      img: `https://${req.headers.host}/img/beware.png`,
+      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
       content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
 
       storeInfo:[
@@ -133,7 +131,7 @@ res.json(store);
 app.get("/card/info", (req, res) => {
   let info = {
     header: "Vincent Wyckoff",
-    img:`https://${req.headers.host}/img/bio.png`,
+    img:`https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/bio.png`,
     content: `Born and raised in Columbia Heights, Minnesota, Vince dedicated a career to the U.S. Postal Service. His first book, Beware of Cat, and Other Encounters of a Letter Carrier, celebrates the stories of people on his route. Prior to that, he served a tour of duty in the U.S. Army, and attended the University of Minnesota. For a short time he lived on the Northshore of Lake Superior, from which he developed the background for Black Otter Bay, his first work of fiction, and a finalist for the 2016 Midwest Book Award. His stories have been published in several local periodicals, as well as the anthology, Home. Recently nominated for two awards, Nightwatchers is the sequel to Black Otter Bay. Vince and his wife, Sybil, are longtime residents of south Minneapolis. They have three children and six grandchildren.
   `,
     quotes:
@@ -149,7 +147,7 @@ app.get("/events", (req, res) => {
   let events = [{
     id: 1,
     key: 1,
-    img: `https://${req.headers.host}/img/vince_reading.jpg`,
+    img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/vince_reading.jpg`,
     title: "Coming Soon",
     date: "",
     content: 'Check back soon for upcoming reading events!',
