@@ -148,7 +148,7 @@ app.get("/events", (req, res) => {
   let events = [{
     id: 1,
     key: 1,
-    img: `http://${req.headers.host}/img/vince_reading.png`,
+    img: `http://${req.headers.host}/img/vince_reading.jpg`,
     title: "Coming Soon",
     date: "",
     content: 'Check back soon for upcoming reading events!',
