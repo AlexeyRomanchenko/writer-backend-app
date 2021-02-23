@@ -153,9 +153,9 @@ app.get("/events", (req, res) => {
     content: 'Check back soon for upcoming reading events!',
     anchor:"/events"
   }];
-  setTimeout(() => {
+ 
     res.json(events);
-  },1000);
+  
   })
 
   //5. Store Data
@@ -186,9 +186,8 @@ app.get("/events", (req, res) => {
         }
 
       ]
-      setTimeout(() => {
+   
         res.json(storeData);
-      },1000);
 
     })
 
