@@ -7,8 +7,7 @@ const port = 3001;
 app.use(express.static("public"));
 app.use(cors());
 
-//comment out when upload into Lambda
-//app.set("port", process.env.PORT || 3001); 
+app.set("port", process.env.PORT || 3001); //comment out when upload into Lambda
 
 app.get("/", (req, res) => {
   res.render("index.html");
@@ -20,33 +19,34 @@ app.get("/", (req, res) => {
 app.get('/works', (req, res) => {
   const works = [
     {
-      id: 1,
-      title: "Nightwatchers",
-      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/nightwatchers.png`,
-      content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
-    },
-    {
-      id: 2,
-      title: "Black Otter Bay",
-      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/blackotterbay.png`,
-      content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.",
-    },
-    {
-
-      id: 3,
-      title: 'Beware of Cat',
-      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
-      content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
-    }
-
-  ];
- 
+        id: 1,
+        title: "Nightwatchers",
+        img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/nightwatchers.png`,
+        content: 'In Nightwatchers, we return to the small fictional town of Black Otter Bay where a sinister presence is lurking in the adjacent forests. A fast-paced read, Nightwatchers casts unique characters amidst the stark beauty of Minnesota’s Northshore. The legend of Manitou coincides with the action, intensifying the mystery and intrigue. It plays on the reader’s deepest fear: that is, what’s out there in the dark, watching you?',
+      },
+      {
+        id: 2,
+        title: "Black Otter Bay",
+        img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/blackotterbay.png`,
+        content: "The tranquility of a remote shoreline is shattered when Abby Simon witnesses the cover-up to a murder. But her whole world is thrown into turmoil when the murderer discovers her identity. The ensuing chase hurtles from the fog-enshrouded Northshore to the glittering lights of downtown Duluth. A character driven mystery, Black Otter Bay is suffused in the stark beauty of Lake Superior’s Northshore. Rich in storytelling and steeped in the legends and grandeur of Lake Superior, Black Otter Bay is a subtly suspenseful yet non-violent cabin (or anywhere) must-read.",
+      },
+      {
+  
+        id: 3,
+        title: 'Beware of Cat',
+        img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
+        content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
+      }
+  
+    ];
     res.json(works);
- 
+  
 
 });
 
 //2. Works by ID -
+
+//This isn't working - we should be receiving the id, which then invokes storeInfo associated with that id
 
 
 app.get('/shops/work/:id', (req, res)=> {
@@ -96,11 +96,11 @@ app.get('/shops/work/:id', (req, res)=> {
       ]
    },
     {
-      label: "Buy",
-      id: 3,
-      title: 'Beware of Cat',
-      img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
-      content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
+        label: "Buy",
+        id: 3,
+        title: 'Beware of Cat',
+        img: `https://photos-wyckoff.s3.us-east-2.amazonaws.com/img/beware.png`,
+        content: 'Celebrating the triumphs in everyday life and demonstrating the danger of trusting first impressions, Beware of Cat reveals the inner workings of an ordinary place of extraordinary interest. "While it’s possible to learn many details of people’s lives from the mail they receive, most of what I’ve discovered has come from talking to people. It can’t be helped. Walk through someone’s life once a day, year after year after year, and you’re bound to learn a few things.”-Vincent Wyckoff',
 
       storeInfo:[
         {shop_name: 'Once Upon a Crime',
@@ -137,7 +137,7 @@ app.get("/card/info", (req, res) => {
     quotes:
       "“The world needs more wise and gentle voices like Vince Wyckoff’s.” - Lorna Landvik",
   };
-  
+ 
     res.json(info);
  
 });
@@ -153,9 +153,9 @@ app.get("/events", (req, res) => {
     content: 'Check back soon for upcoming reading events!',
     anchor:"/events"
   }];
- 
-    res.json(events);
   
+    res.json(events);
+ 
   })
 
   //5. Store Data
@@ -186,17 +186,18 @@ app.get("/events", (req, res) => {
         }
 
       ]
-   
+     
         res.json(storeData);
+    
 
     })
 
 
 
 
- module.exports.handler = serverless(app); 
+/* module.exports.handler = serverless(app); */
 
 
-// app.listen(app.get("port"), () => {
-//   console.log(`Example app listening at https://localhost:${app.get("port")}`);
-// });
+app.listen(app.get("port"), () => {
+  console.log(`Example app listening at http://localhost:${app.get("port")}`);
+});
