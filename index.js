@@ -7,7 +7,7 @@ const port = 3001;
 app.use(express.static("public"));
 app.use(cors());
 
-app.set("port", process.env.PORT || 3001); //comment out when upload into Lambda
+//app.set("port", process.env.PORT || 3001); 
 
 app.get("/", (req, res) => {
   res.render("index.html");
@@ -197,6 +197,9 @@ app.get("/events", (req, res) => {
     })
 
 
+
+
+module.exports.handler = serverless(app); 
 
 
 app.listen(app.get("port"), () => {
