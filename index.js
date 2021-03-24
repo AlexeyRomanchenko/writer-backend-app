@@ -66,7 +66,7 @@ app.get('/shops/work/:id', (req, res)=> {
 
         {shop_name: 'Amazon',
         shop_logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png',
-        shop_link:'https://www.amazon.com/-/es/Vincent-Wyckoff/dp/1682011127/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr='},
+        shop_link:'https://www.amazon.com/Nightwatchers-Vincent-Wyckoff-ebook/dp/B08H5P8YGG/ref=sr_1_1?dchild=1&keywords=wyckoff+nightwatchers&qid=1615759342&sr=8-1'},
 
         {shop_name: 'Barnes and Noble',
         shop_logo:'https://happycards.com/wp-content/uploads/2020/09/barnes-noble-logo.png',
@@ -90,7 +90,7 @@ app.get('/shops/work/:id', (req, res)=> {
 
         {shop_name: 'Amazon',
         shop_logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png',
-        shop_link:'https://www.amazon.com/-/es/Vincent-Wyckoff/dp/1682010260/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1603677732&sr=1-1'},
+        shop_link:'https://www.amazon.com/Black-Otter-Bay-Vincent-Wyckoff/dp/1682010260/ref=sr_1_1?dchild=1&keywords=wyckoff+black+otter+bay&qid=1615759384&sr=8-1'},
 
         {shop_name: 'Barnes and Noble',
         shop_logo:'https://happycards.com/wp-content/uploads/2020/09/barnes-noble-logo.png',
@@ -112,7 +112,7 @@ app.get('/shops/work/:id', (req, res)=> {
 
           {shop_name: 'Amazon',
           shop_logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png',
-          shop_link:'https://www.amazon.com/Beware-Cat-Encounters-Letter-Carrier/dp/087351582X'},
+          shop_link:'https://www.amazon.com/Beware-Cat-Encounters-Letter-Carrier/dp/087351582X/ref=sr_1_1?dchild=1&keywords=wyckoff+beware+of+cat&qid=1615759424&sr=8-1'},
 
           {shop_name: 'Barnes and Noble',
           shop_logo:'https://happycards.com/wp-content/uploads/2020/09/barnes-noble-logo.png',
